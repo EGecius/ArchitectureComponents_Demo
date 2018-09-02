@@ -1,6 +1,7 @@
 package com.egecius.architecturecomponents_demo
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initLiveData() {
         imagesLiveData.observe(this, Observer {
+           Log.v("Eg:MainActivity:38", "initLiveData $it")
             showImages(it)
         })
     }

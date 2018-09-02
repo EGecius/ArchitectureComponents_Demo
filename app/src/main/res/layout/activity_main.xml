@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
@@ -24,6 +25,8 @@
 
     <ImageView
         android:id="@+id/image_view"
+        android:minHeight="100dp"
+        android:background="@android:color/holo_green_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
