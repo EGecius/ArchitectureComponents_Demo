@@ -1,7 +1,6 @@
 package com.egecius.architecturecomponents_demo
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,7 +11,6 @@ import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
 
-    private val imagesLiveData = ImagesLiveData()
     private lateinit var viewModel: CounterViewModel
     private lateinit var counterView: TextView
     private lateinit var imageView: ImageView
@@ -35,8 +33,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLiveData() {
+
+        val imagesLiveData: ImagesLiveData = viewModel.getImagesLiveData()
         imagesLiveData.observe(this, Observer {
-           Log.v("Eg:MainActivity:38", "initLiveData $it")
             showImages(it)
         })
     }
