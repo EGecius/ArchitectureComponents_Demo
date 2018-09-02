@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
 
 class MainActivity : AppCompatActivity() {
@@ -15,13 +14,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initViewModel()
 
         counterView = findViewById(R.id.counter)
         setOnClickListener()
-
-        val fragmentActivity: FragmentActivity = this
-        viewModel = ViewModelProviders.of(fragmentActivity).get(CounterViewModel::class.java)
         updateCounterView()
+    }
+
+    private fun initViewModel() {
+        viewModel = ViewModelProviders.of(this).get(CounterViewModel::class.java)
     }
 
     private fun setOnClickListener() {
