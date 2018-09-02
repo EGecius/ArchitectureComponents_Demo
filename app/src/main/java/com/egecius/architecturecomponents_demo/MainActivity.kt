@@ -19,12 +19,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initViewModel()
+        initLifecycleObserver()
 
         counterView = findViewById(R.id.counter)
         imageView = findViewById(R.id.image_view)
 
         setOnClickListener()
         updateCounterView()
+    }
+
+    private fun initLifecycleObserver() {
+        MyLifecycleObserver().bindTo(this)
     }
 
     override fun onStart() {
