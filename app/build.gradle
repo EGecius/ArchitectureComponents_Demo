@@ -30,4 +30,5 @@ dependencies {
     // ViewModel and LiveData
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-rc01'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
